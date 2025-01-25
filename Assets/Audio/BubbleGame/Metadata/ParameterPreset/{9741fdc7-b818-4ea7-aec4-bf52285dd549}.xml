@@ -12,20 +12,23 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{12950b06-15ef-42cd-bf06-a80e9910e02f}">
-		<property name="parameterType">
-			<value>1</value>
-		</property>
 		<property name="minimum">
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>11</value>
-		</property>
-		<property name="initialValue">
 			<value>10</value>
 		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
 		<property name="seekSpeed">
-			<value>3.4000000953674316</value>
+			<value>4.9000000953674316</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>2.1000001430511475</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
 		</property>
 		<relationship name="automators">
 			<destination>{1cf077e1-d23e-4b07-aed9-6e94d3706587}</destination>
