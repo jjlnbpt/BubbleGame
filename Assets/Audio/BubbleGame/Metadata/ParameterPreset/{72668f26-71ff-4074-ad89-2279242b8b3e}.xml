@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{72668f26-71ff-4074-ad89-2279242b8b3e}">
+		<property name="name">
+			<value>PopPitch</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7be8e9ec-cbaf-4552-9cb1-9c4aa63839ac}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5cb75d39-6143-4c1e-803f-a43fedbf424b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5cb75d39-6143-4c1e-803f-a43fedbf424b}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="minimum">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>16</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

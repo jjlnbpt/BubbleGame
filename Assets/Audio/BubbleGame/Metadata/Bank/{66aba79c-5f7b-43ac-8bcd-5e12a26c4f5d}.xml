@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{66aba79c-5f7b-43ac-8bcd-5e12a26c4f5d}">
+		<property name="name">
+			<value>SplashEvent</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1715a25c-5a39-44cd-968f-8c0f8f2e582d}</destination>
+		</relationship>
+	</object>
+</objects>
