@@ -1,10 +1,9 @@
-using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class OnClick : MonoBehaviour
 {
-    [Description("Radius of bubble used for checking if the player clicks on a bubble")]
+    [Tooltip("Radius of bubble used for checking if the player clicks on a bubble")]
     public float radius = 1.0f;
 
     private Camera m_camera;
@@ -12,13 +11,13 @@ public class OnClick : MonoBehaviour
 
     [Header("Events")]
     [Space]
-    [Description("A simple pop event that provides no arguments")]
+    [Tooltip("A simple pop event that provides no arguments")]
     public UnityEvent onPopSimple;
-    [Description("A simple pop event that provides the radius of the bubble popped")]
+    [Tooltip("A simple pop event that provides the radius of the bubble popped")]
     public UnityEvent<float> onPop;
-    [Description("Is the mouse cursor hovering over the bubble")]
+    [Tooltip("Is the mouse cursor hovering over the bubble")]
     public UnityEvent onHover;
-    [Description("Is the mouse cursor stops hovering over the bubble")]
+    [Tooltip("Is the mouse cursor stops hovering over the bubble")]
     public UnityEvent onHoverExit;
 
     // Start is called before the first frame update
