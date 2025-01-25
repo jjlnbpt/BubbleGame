@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{9741fdc7-b818-4ea7-aec4-bf52285dd549}">
+		<property name="name">
+			<value>MusicIntensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7be8e9ec-cbaf-4552-9cb1-9c4aa63839ac}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{12950b06-15ef-42cd-bf06-a80e9910e02f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{12950b06-15ef-42cd-bf06-a80e9910e02f}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="minimum">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="initialValue">
+			<value>10</value>
+		</property>
+		<property name="seekSpeed">
+			<value>3.4000000953674316</value>
+		</property>
+		<relationship name="automators">
+			<destination>{1cf077e1-d23e-4b07-aed9-6e94d3706587}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{1cf077e1-d23e-4b07-aed9-6e94d3706587}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>
