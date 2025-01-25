@@ -4,10 +4,14 @@ using UnityEngine.Events;
 
 public class OnClick : MonoBehaviour
 {
+    [Description("Radius of bubble used for checking if the player clicks on a bubble")]
     public float radius = 1.0f;
+
     private Camera m_camera;
+    private BubbleManager m_bubbleManeger;
 
     [Header("Events")]
+    [Space]
     [Description("A simple pop event that provides no arguments")]
     public UnityEvent onPopSimple;
     [Description("A simple pop event that provides the radius of the bubble popped")]
@@ -21,6 +25,7 @@ public class OnClick : MonoBehaviour
     void Start()
     {
         m_camera = FindObjectOfType<Camera>();
+        m_bubbleManeger = FindObjectOfType<BubbleManager>();
 
         // Double the scale so it renders with correct radius
         transform.localScale = transform.localScale * radius * 2.0f;
@@ -50,6 +55,7 @@ public class OnClick : MonoBehaviour
         {
             onPopSimple.Invoke();
             onPop.Invoke(radius);
+            m_bubbleManeger.IncrementPopCount();
             this.gameObject.SetActive(false);
 
         }
