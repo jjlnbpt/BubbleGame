@@ -1869,6 +1869,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: sampleCount
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <popEvent>k__BackingField.Path
+      value: event:/PopEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <spawnEvent>k__BackingField.Path
+      value: event:/SpawnEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <popEvent>k__BackingField.Guid.Data1
+      value: -456015144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <popEvent>k__BackingField.Guid.Data2
+      value: 1075192534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <popEvent>k__BackingField.Guid.Data3
+      value: -1706146152
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <popEvent>k__BackingField.Guid.Data4
+      value: 1368931689
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <spawnEvent>k__BackingField.Guid.Data1
+      value: -71076795
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <spawnEvent>k__BackingField.Guid.Data2
+      value: 1256503445
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <spawnEvent>k__BackingField.Guid.Data3
+      value: -225228136
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116296125914379758, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
+      propertyPath: <spawnEvent>k__BackingField.Guid.Data4
+      value: 988049958
+      objectReference: {fileID: 0}
     - target: {fileID: 7824012685494798377, guid: 75f62b6e178f99b4bade29cd63c9ebf5, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1886,13 +1930,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2399956538204540268, guid: d6dde2a9478c00e408b6bc9a7d00a53c, type: 3}
+      propertyPath: multiplier
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 3095733771815777219, guid: d6dde2a9478c00e408b6bc9a7d00a53c, type: 3}
       propertyPath: m_Name
       value: AudioReactor
-      objectReference: {fileID: 0}
-    - target: {fileID: 3095733771815777219, guid: d6dde2a9478c00e408b6bc9a7d00a53c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4346248663240184687, guid: d6dde2a9478c00e408b6bc9a7d00a53c, type: 3}
       propertyPath: m_LocalPosition.x

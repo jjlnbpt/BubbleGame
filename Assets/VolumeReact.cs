@@ -4,8 +4,9 @@ using UnityEngine;
 public class VolumeReact : MonoBehaviour
 {
     [SerializeField] float alpha = 0.9f;
+    [SerializeField] float multiplier = 50f;
     private Vector3 m_originalPosition;
-    float dy = 0;
+    public float dy = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,6 @@ public class VolumeReact : MonoBehaviour
     void Update()
     {
         dy = dy * (alpha) + AudioManager.instance.samples.AsEnumerable<float>().Average() * (1 - alpha);
-        transform.position = m_originalPosition + new Vector3(0.0f, dy * 2000, 0.0f);
+        transform.position = m_originalPosition + new Vector3(0.0f, dy * multiplier, 0.0f);
     }
 }
