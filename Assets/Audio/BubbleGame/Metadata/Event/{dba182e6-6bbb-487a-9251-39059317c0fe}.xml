@@ -226,7 +226,7 @@
 			<value>Magenta</value>
 		</property>
 		<property name="volume">
-			<value>3.5</value>
+			<value>-1.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d7d03509-29e8-4e1b-ba74-0a292a144274}</destination>

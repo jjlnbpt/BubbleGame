@@ -8,6 +8,7 @@ public class OnClick : MonoBehaviour
     public float growthRate = 1.0f;
 
     [SerializeField] private float pop_radius = 4.0f;
+    public float MaxSendOffForce;
 
     private Vector3 originalScale;
 
@@ -32,9 +33,12 @@ public class OnClick : MonoBehaviour
     [Tooltip("Spawn event that provides no arguments")]
     public UnityEvent onSpawnSimple;
 
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         m_camera = FindObjectOfType<Camera>();
         m_bubbleManeger = FindObjectOfType<BubbleManager>();
 
@@ -83,23 +87,28 @@ public class OnClick : MonoBehaviour
 
         if ((Input.GetMouseButtonDown(0) && Vector3.Distance(worldPos, pos) <= radius) || sizeExceeded)
         {
-            AudioManager.instance.CreatePopInstance(m_bubbleManeger.GetCurrentCombo());
 
-            onPopSimple.Invoke();
-            onPop.Invoke(radius);
-
-            if (sizeExceeded)
-            {
-                m_bubbleManeger.IncrementPopCount((int)pop_radius + 1);
-            }
-            else
-            {
-                m_bubbleManeger.IncrementPopCount((int)radius);
-            }
-
-            active = false;
-
+            Pop(sizeExceeded);
         }
+    }
+
+    public void Pop(bool sizeExceeded)
+    {
+        AudioManager.instance.CreatePopInstance(m_bubbleManeger.GetCurrentCombo());
+
+        onPopSimple.Invoke();
+        onPop.Invoke(radius);
+
+        if (sizeExceeded)
+        {
+            m_bubbleManeger.IncrementPopCount((int)pop_radius + 1);
+        }
+        else
+        {
+            m_bubbleManeger.IncrementPopCount((int)radius);
+        }
+
+        active = false;
     }
 
     /// <summary>
@@ -112,7 +121,12 @@ public class OnClick : MonoBehaviour
         if (Input.GetMouseButton(1) && Vector3.Distance(worldPos, pos) <= radius)
         {
             radius += growthRate * Time.deltaTime;
+        } else if (Input.GetMouseButtonUp(1) && Vector3.Distance(worldPos, pos) <= radius)
+        {
+            Vector2 SendOffVector = new Vector2(Random.Range(-MaxSendOffForce, MaxSendOffForce), Random.Range(-MaxSendOffForce, MaxSendOffForce));
+            rb.AddForce(SendOffVector, ForceMode2D.Impulse);
         }
+        
     }
 
 
