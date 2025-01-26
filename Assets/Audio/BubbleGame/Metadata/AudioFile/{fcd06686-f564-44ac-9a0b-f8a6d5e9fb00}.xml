@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fcd06686-f564-44ac-9a0b-f8a6d5e9fb00}">
+		<property name="assetPath">
+			<value>layer_cello.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>47.389478458049886</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{480f3cd1-1568-4a5b-b558-fa1a2b6f7c48}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c3694cd7-6246-47b1-9569-6cdc013b8a9f}">
+		<property name="assetPath">
+			<value>layer_pizz_bass.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>45.903401360544215</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{480f3cd1-1568-4a5b-b558-fa1a2b6f7c48}</destination>
+		</relationship>
+	</object>
+</objects>

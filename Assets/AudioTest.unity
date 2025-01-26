@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &158257723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 402289793514493809, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
+  m_PrefabInstance: {fileID: 5611483583575010397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &195976707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -734,7 +739,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3302523534127309534, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3302523534127309534, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -743,14 +748,14 @@ PrefabInstance:
     - target: {fileID: 3302523534127309534, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 158257723}
     - target: {fileID: 3302523534127309534, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3302523534127309534, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 3302523534127309534, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1497,7 +1502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: comboTime
-      value: 0.5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: <backgroundMusic>k__BackingField.Path
