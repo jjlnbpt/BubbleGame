@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [field: SerializeField] public EventReference backgroundMusic { get; private set; }
     [field: SerializeField] public EventReference popEvent { get; private set; }
     [field: SerializeField] public EventReference spawnEvent { get; private set; }
+    [field: SerializeField] public EventReference splashEvent { get; private set; }
+
 
     public EventInstance background;
     private List<EventInstance> events;
@@ -92,7 +94,6 @@ public class AudioManager : MonoBehaviour
 
         int pitch = Mathf.Min(combo, 15);
         eventInstance.setParameterByName("PopPitch", pitch);
-        Debug.Log(combo);
         eventInstance.start();
 
         return eventInstance;
@@ -103,6 +104,18 @@ public class AudioManager : MonoBehaviour
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(spawnEvent);
         events.Add(eventInstance);
+        return eventInstance;
+    }
+
+    // Creates an instance of a droplet splashing event
+    public EventInstance CreateSplashInstance()
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(splashEvent);
+        events.Add(eventInstance);
+
+        eventInstance.setParameterByName("SplashPitch", Random.Range(1, 15));
+        eventInstance.start();
+
         return eventInstance;
     }
 
@@ -122,4 +135,6 @@ public class AudioManager : MonoBehaviour
             e.release();
         }
     }
+
+
 }

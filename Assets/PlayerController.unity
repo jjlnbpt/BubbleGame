@@ -590,6 +590,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1803580392}
     m_Modifications:
+    - target: {fileID: 1319323892515386037, guid: 416d535f188161442808515c38d3f85f, type: 3}
+      propertyPath: onPopSimple.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5425438562895493469, guid: 416d535f188161442808515c38d3f85f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9304621
@@ -634,10 +638,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBubble (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2775515805545316280, guid: 416d535f188161442808515c38d3f85f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4659055306729482203, guid: 416d535f188161442808515c38d3f85f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1598005131}
   m_SourcePrefab: {fileID: 100100000, guid: 416d535f188161442808515c38d3f85f, type: 3}
 --- !u!1001 &895024977
 PrefabInstance:
@@ -1051,6 +1059,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1598005126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4659055306729482203, guid: 416d535f188161442808515c38d3f85f, type: 3}
+  m_PrefabInstance: {fileID: 879730481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1598005131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598005126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24c01eb2a25541438789f5ddf2627f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1604093364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2033,7 +2058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: comboTime
-      value: 0.5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: <backgroundMusic>k__BackingField.Path

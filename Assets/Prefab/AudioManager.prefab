@@ -53,15 +53,24 @@ MonoBehaviour:
     Path: event:/BackgroundMusic
   <popEvent>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -456015144
+      Data2: 1075192534
+      Data3: -1706146152
+      Data4: 1368931689
+    Path: event:/PopEvent
   <spawnEvent>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -71076795
+      Data2: 1256503445
+      Data3: -225228136
+      Data4: 988049958
+    Path: event:/SpawnEvent
+  <splashEvent>k__BackingField:
+    Guid:
+      Data1: 1521383697
+      Data2: 1211958930
+      Data3: 1658145686
+      Data4: -1447958349
+    Path: event:/SplashEvent
+  sampleCount: 1028
+  samples: []

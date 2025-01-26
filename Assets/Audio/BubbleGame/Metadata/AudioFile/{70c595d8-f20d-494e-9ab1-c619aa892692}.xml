@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{70c595d8-f20d-494e-9ab1-c619aa892692}">
+		<property name="assetPath">
+			<value>bubble_splash_variant2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{480f3cd1-1568-4a5b-b558-fa1a2b6f7c48}</destination>
+		</relationship>
+	</object>
+</objects>
