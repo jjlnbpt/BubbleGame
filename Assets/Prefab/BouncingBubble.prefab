@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 651472932222119159}
   - component: {fileID: 4480904558516388084}
   m_Layer: 0
-  m_Name: TestBubble 1
+  m_Name: BouncingBubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

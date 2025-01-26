@@ -874,10 +874,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 402289793514493809, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 402289793514493809, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: m_Name
       value: BubbleManager
       objectReference: {fileID: 0}
@@ -920,34 +916,6 @@ PrefabInstance:
     - target: {fileID: 4443684282860170979, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: comboTime
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: bubblePrefab
-      value: 
-      objectReference: {fileID: 8490902313251323362, guid: 416d535f188161442808515c38d3f85f, type: 3}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: <backgroundMusic>k__BackingField.Path
-      value: event:/BackgroundMusic
-      objectReference: {fileID: 0}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: <backgroundMusic>k__BackingField.Guid.Data1
-      value: -610172186
-      objectReference: {fileID: 0}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: <backgroundMusic>k__BackingField.Guid.Data2
-      value: 1215982523
-      objectReference: {fileID: 0}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: <backgroundMusic>k__BackingField.Guid.Data3
-      value: 87642514
-      objectReference: {fileID: 0}
-    - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
-      propertyPath: <backgroundMusic>k__BackingField.Guid.Data4
-      value: -20965485
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
