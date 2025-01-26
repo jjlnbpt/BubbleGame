@@ -5,9 +5,19 @@ public class OnClick : MonoBehaviour
 {
     [Tooltip("Radius of bubble used for checking if the player clicks on a bubble")]
     public float radius = 1.0f;
+    public float growthRate = 1.0f;
+
+    [SerializeField] private float pop_radius = 4.0f;
+
+    private Vector3 originalScale;
 
     private Camera m_camera;
     private BubbleManager m_bubbleManeger;
+
+    public bool active = true;
+    public bool hover = false;
+
+    private bool register = false;
 
     [Header("Events")]
     [Space]
@@ -28,21 +38,37 @@ public class OnClick : MonoBehaviour
         m_camera = FindObjectOfType<Camera>();
         m_bubbleManeger = FindObjectOfType<BubbleManager>();
 
-        // Double the scale so it renders with correct radius
-        transform.localScale = transform.localScale * radius * 2.0f;
+        originalScale = transform.localScale;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        var pos = transform.position;
-        pos.z = 0.0f;
-        var worldPos = m_camera.ScreenToWorldPoint(Input.mousePosition);
-        worldPos.z = 0.0f;
+        if (!register)
+        {
+            m_bubbleManeger.RegisterBubble(this);
+            register = true;
+        }
 
-        CheckForPop(pos, worldPos);
-        CheckForSpawn(pos, worldPos);
-        DetectHover(pos, worldPos);
+        // Double the scale so it renders with correct radius
+        transform.localScale = originalScale * radius * 2.0f;
+
+        if (active)
+        {
+            var pos = transform.position;
+            pos.z = 0.0f;
+            var worldPos = m_camera.ScreenToWorldPoint(Input.mousePosition);
+            worldPos.z = 0.0f;
+
+            CheckForPop(pos, worldPos);
+            CheckForGrow(pos, worldPos);
+            DetectHover(pos, worldPos);
+        }
+        else
+        {
+            hover = false;
+        }
 
     }
 
@@ -53,33 +79,42 @@ public class OnClick : MonoBehaviour
     /// <param name="worldPos"></param>
     private void CheckForPop(Vector3 pos, Vector3 worldPos)
     {
-        if (Input.GetMouseButtonDown(0) && Vector3.Distance(worldPos, pos) <= radius)
+        bool sizeExceeded = radius > pop_radius;
+
+        if ((Input.GetMouseButtonDown(0) && Vector3.Distance(worldPos, pos) <= radius) || sizeExceeded)
         {
             AudioManager.instance.CreatePopInstance(m_bubbleManeger.GetCurrentCombo());
 
             onPopSimple.Invoke();
             onPop.Invoke(radius);
-            m_bubbleManeger.IncrementPopCount();
+
+            if (sizeExceeded)
+            {
+                m_bubbleManeger.IncrementPopCount((int)pop_radius + 1);
+            }
+            else
+            {
+                m_bubbleManeger.IncrementPopCount((int)radius);
+            }
+
+            active = false;
 
         }
     }
 
-
     /// <summary>
-    /// Check to see if the conditions to spawn the bubble are met
+    /// Check to see if the conditions to pop the bubble are met
     /// </summary>
     /// <param name="pos"></param>
     /// <param name="worldPos"></param>
-    private void CheckForSpawn(Vector3 pos, Vector3 worldPos)
+    private void CheckForGrow(Vector3 pos, Vector3 worldPos)
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1) && Vector3.Distance(worldPos, pos) <= radius)
         {
-            // call proper functions for spawning
-            AudioManager.instance.CreateSpawnInstance(m_bubbleManeger.GetCurrentCombo());
-
-            onSpawnSimple.Invoke();
+            radius += growthRate * Time.deltaTime;
         }
     }
+
 
     /// <summary>
     /// Detects when the mouse cursor hovers over a bubble
@@ -91,11 +126,13 @@ public class OnClick : MonoBehaviour
         if (Vector3.Distance(worldPos, pos) <= radius)
         {
             onHover.Invoke();
+            hover = true;
 
         }
         else
         {
             onHoverExit.Invoke();
+            hover = false;
         }
     }
 }

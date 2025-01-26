@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// A centralized manager for tracking global information about bubbles.
@@ -13,12 +15,29 @@ public class BubbleManager : MonoBehaviour
     private float m_timeSinceLastPop = 0.0f;
     private int m_combo = 0;
 
-    // Increments the pop counter by 1 for every bubble popped
-    public void IncrementPopCount()
+    [Tooltip("Spawn event that provides no arguments")]
+    public UnityEvent onSpawnSimple;
+    [Tooltip("Bubble prefab")]
+    [SerializeField] private GameObject bubblePrefab;
+
+    private List<OnClick> bubbles;
+
+    private void Start()
     {
-        m_popCount += 1;
+        bubbles = new List<OnClick>();
+    }
+
+    public void RegisterBubble(OnClick bubble)
+    {
+        bubbles.Add(bubble);
+    }
+
+    // Increments the pop counter by 1 for every bubble popped
+    public void IncrementPopCount(int amount = 1)
+    {
+        m_popCount += amount;
         m_timeSinceLastPop = 0.0f;
-        m_combo += 1;
+        m_combo += amount;
     }
 
     private void Update()
@@ -31,6 +50,36 @@ public class BubbleManager : MonoBehaviour
 
         AudioManager.instance.background.setParameterByName("MusicIntensity", m_combo);
 
+        CheckForSpawn();
+    }
+
+    /// <summary>
+    /// Check to see if the conditions to spawn the bubble are met
+    /// </summary>
+    /// <param name="pos"></param>
+    /// <param name="worldPos"></param>
+    private void CheckForSpawn()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            var worldPos = FindObjectOfType<Camera>().ScreenToWorldPoint(Input.mousePosition);
+            worldPos.z = 0.0f;
+
+            foreach (OnClick bubble in bubbles)
+            {
+                if (bubble.hover)
+                {
+                    return;
+                }
+            }
+
+            Instantiate(bubblePrefab, worldPos, transform.rotation);
+
+            // call proper functions for spawning
+            AudioManager.instance.CreateSpawnInstance(GetCurrentCombo());
+
+            onSpawnSimple.Invoke();
+        }
     }
 
     public int GetPopCount()
