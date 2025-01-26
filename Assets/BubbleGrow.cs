@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubblePhysics : MonoBehaviour
+public class BubbleGrow : MonoBehaviour
 {
 
     public float MaxSendOffForce;
@@ -19,6 +19,8 @@ public class BubblePhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //temporary - remove after OnSendOff is hooked up with grow function
         if (Input.GetKeyDown(KeyCode.Space))
         {
             OnSendOff();

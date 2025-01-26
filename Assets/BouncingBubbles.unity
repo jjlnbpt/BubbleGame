@@ -180,7 +180,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBubble (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4155033408309997535, guid: 0466d788cffd84dd784ab75322038f88, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -237,7 +238,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBubble (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4155033408309997535, guid: 0466d788cffd84dd784ab75322038f88, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -386,7 +388,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBubble (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4155033408309997535, guid: 0466d788cffd84dd784ab75322038f88, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -829,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: comboTime
-      value: 12
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7577271701737815037, guid: da9f192fe3c1fca48a6393d27c4d2050, type: 3}
       propertyPath: <backgroundMusic>k__BackingField.Path

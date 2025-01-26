@@ -29,7 +29,7 @@ public class BubbleManager : MonoBehaviour
             m_combo = 0;
         }
 
-        AudioManager.instance.background.setParameterByName("MusicIntensity", m_popCount);
+        AudioManager.instance.background.setParameterByName("MusicIntensity", m_combo);
 
     }
 

@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1254223291687393769}
   - component: {fileID: 3203911776591172310}
   - component: {fileID: 651472932222119159}
-  - component: {fileID: 4155033408309997535}
+  - component: {fileID: 6484894226996642041}
   m_Layer: 0
   m_Name: TestBubble 1
   m_TagString: Bubble
@@ -349,7 +349,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4155033408309997535
+--- !u!114 &6484894226996642041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3250028283786004998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ee3b39fdb39412b829fea4eceb81db, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a746530313724f39b39e031ba3aa774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSendOffForce: 3
