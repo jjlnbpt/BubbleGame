@@ -100,10 +100,15 @@ public class AudioManager : MonoBehaviour
     }
 
     // Creates an instance of a bubble spawning event
-    public EventInstance CreateSpawnInstance()
+    public EventInstance CreateSpawnInstance(int combo)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(spawnEvent);
         events.Add(eventInstance);
+
+        int pitch = Mathf.Min(combo, 15);
+        eventInstance.setParameterByName("SpawnPitch", pitch);
+        eventInstance.start();
+
         return eventInstance;
     }
 

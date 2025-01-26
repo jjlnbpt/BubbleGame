@@ -19,6 +19,8 @@ public class OnClick : MonoBehaviour
     public UnityEvent onHover;
     [Tooltip("Is the mouse cursor stops hovering over the bubble")]
     public UnityEvent onHoverExit;
+    [Tooltip("Spawn event that provides no arguments")]
+    public UnityEvent onSpawnSimple;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class OnClick : MonoBehaviour
         worldPos.z = 0.0f;
 
         CheckForPop(pos, worldPos);
+        CheckForSpawn(pos, worldPos);
         DetectHover(pos, worldPos);
 
     }
@@ -58,6 +61,23 @@ public class OnClick : MonoBehaviour
             onPop.Invoke(radius);
             m_bubbleManeger.IncrementPopCount();
 
+        }
+    }
+
+
+    /// <summary>
+    /// Check to see if the conditions to spawn the bubble are met
+    /// </summary>
+    /// <param name="pos"></param>
+    /// <param name="worldPos"></param>
+    private void CheckForSpawn(Vector3 pos, Vector3 worldPos)
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            // call proper functions for spawning
+            AudioManager.instance.CreateSpawnInstance(m_bubbleManeger.GetCurrentCombo());
+
+            onSpawnSimple.Invoke();
         }
     }
 

@@ -4,7 +4,7 @@ public class PopAnimate : MonoBehaviour
 {
     public void PlayAnimation()
     {
-        var animator = GetComponent<Animator>();
+        Animator animator = GetComponent<Animator>();
 
         animator.SetBool("Play", true);
     }
