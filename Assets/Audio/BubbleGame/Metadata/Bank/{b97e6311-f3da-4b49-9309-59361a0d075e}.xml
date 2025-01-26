@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{b97e6311-f3da-4b49-9309-59361a0d075e}">
+		<property name="name">
+			<value>HoverEvent</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1715a25c-5a39-44cd-968f-8c0f8f2e582d}</destination>
+		</relationship>
+	</object>
+</objects>

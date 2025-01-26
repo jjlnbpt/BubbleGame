@@ -562,6 +562,8 @@ MonoBehaviour:
   - Master
   Banks:
   - BackgroundMusic
+  - HoverEvent
+  - LetGoEvent
   - PopEvent
   - SpawnEvent
   - SplashEvent

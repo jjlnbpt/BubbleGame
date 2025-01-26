@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ad66b33a-c180-4290-b5d2-8bdc071e947e}">
+		<property name="assetPath">
+			<value>Northeastern_University_46.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.17770833333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{480f3cd1-1568-4a5b-b558-fa1a2b6f7c48}</destination>
+		</relationship>
+	</object>
+</objects>

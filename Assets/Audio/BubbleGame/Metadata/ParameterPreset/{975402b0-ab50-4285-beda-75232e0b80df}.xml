@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{975402b0-ab50-4285-beda-75232e0b80df}">
+		<property name="name">
+			<value>LetGo</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7be8e9ec-cbaf-4552-9cb1-9c4aa63839ac}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{35f5a00d-eabf-4180-99e8-2ec230f21ea6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{35f5a00d-eabf-4180-99e8-2ec230f21ea6}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>False</value>
+			<value>True</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

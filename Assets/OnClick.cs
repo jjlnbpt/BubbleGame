@@ -17,6 +17,7 @@ public class OnClick : MonoBehaviour
 
     public bool active = true;
     public bool hover = false;
+    private bool hoverLast = false;
 
     private bool register = false;
 
@@ -49,6 +50,8 @@ public class OnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hoverLast = hover;
+
         if (!register)
         {
             m_bubbleManeger.RegisterBubble(this);
@@ -121,12 +124,24 @@ public class OnClick : MonoBehaviour
         if (Input.GetMouseButton(1) && Vector3.Distance(worldPos, pos) <= radius)
         {
             radius += growthRate * Time.deltaTime;
+
         } else if (Input.GetMouseButtonUp(1) && Vector3.Distance(worldPos, pos) <= radius)
         {
-            Vector2 SendOffVector = new Vector2(Random.Range(-MaxSendOffForce, MaxSendOffForce), Random.Range(-MaxSendOffForce, MaxSendOffForce));
-            rb.AddForce(SendOffVector, ForceMode2D.Impulse);
+            SendOff();
+            AudioManager.instance.SpawnSendOff(m_bubbleManeger.GetCurrentCombo());
         }
         
+    }
+
+
+    private void SendOff()
+    {
+        Vector2 SendOffVector = new Vector2(Random.Range(-MaxSendOffForce, MaxSendOffForce), Random.Range(-MaxSendOffForce, MaxSendOffForce));
+        if (SendOffVector.magnitude < 1)
+        {
+            SendOffVector.Normalize();
+        }
+        rb.AddForce(SendOffVector, ForceMode2D.Impulse);
     }
 
 
@@ -141,7 +156,10 @@ public class OnClick : MonoBehaviour
         {
             onHover.Invoke();
             hover = true;
-
+            if (hover != hoverLast)
+            {
+                AudioManager.instance.CreateHoverInstance();
+            }
         }
         else
         {

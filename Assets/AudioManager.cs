@@ -10,10 +10,14 @@ public class AudioManager : MonoBehaviour
     [field: SerializeField] public EventReference popEvent { get; private set; }
     [field: SerializeField] public EventReference spawnEvent { get; private set; }
     [field: SerializeField] public EventReference splashEvent { get; private set; }
+    [field: SerializeField] public EventReference hoverEvent { get; private set; }
+    [field: SerializeField] public EventReference letGoEvent { get; private set; }
 
 
     public EventInstance background;
     private List<EventInstance> events;
+
+    private EventInstance spawn;
 
     public static AudioManager instance { get; private set; }
 
@@ -102,7 +106,25 @@ public class AudioManager : MonoBehaviour
     // Creates an instance of a bubble spawning event
     public EventInstance CreateSpawnInstance(int combo)
     {
+        Debug.Log("Creating spawn instance");
         EventInstance eventInstance = RuntimeManager.CreateInstance(spawnEvent);
+        events.Add(eventInstance);
+        spawn = eventInstance;
+
+        int pitch = Mathf.Min(combo, 15);
+        eventInstance.setParameterByName("SpawnPitch", pitch);
+        eventInstance.setParameterByName("LetGo", 0.0f);
+        eventInstance.start();
+
+        return eventInstance;
+    }
+
+    public EventInstance SpawnSendOff(int combo)
+    {
+        spawn.setParameterByName("LetGo", 1.0f);
+        spawn.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+        EventInstance eventInstance = RuntimeManager.CreateInstance(letGoEvent);
         events.Add(eventInstance);
 
         int pitch = Mathf.Min(combo, 15);
@@ -119,6 +141,16 @@ public class AudioManager : MonoBehaviour
         events.Add(eventInstance);
 
         eventInstance.setParameterByName("SplashPitch", Random.Range(1, 15));
+        eventInstance.start();
+
+        return eventInstance;
+    }
+
+    public EventInstance CreateHoverInstance()
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(hoverEvent);
+        events.Add(eventInstance);
+
         eventInstance.start();
 
         return eventInstance;

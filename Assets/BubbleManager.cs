@@ -74,9 +74,7 @@ public class BubbleManager : MonoBehaviour
             }
 
             Instantiate(bubblePrefab, worldPos, transform.rotation);
-
-            // call proper functions for spawning
-            AudioManager.instance.CreateSpawnInstance(GetCurrentCombo());
+            AudioManager.instance.CreateSpawnInstance(m_combo);
 
             onSpawnSimple.Invoke();
         }

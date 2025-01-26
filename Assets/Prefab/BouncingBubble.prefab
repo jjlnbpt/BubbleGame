@@ -224,7 +224,7 @@ MonoBehaviour:
   radius: 1
   growthRate: 1
   pop_radius: 4
-  MaxSendOffForce: 3
+  MaxSendOffForce: 4
   active: 1
   hover: 0
   onPopSimple:
