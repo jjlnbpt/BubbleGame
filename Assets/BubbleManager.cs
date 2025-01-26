@@ -7,7 +7,7 @@ public class BubbleManager : MonoBehaviour
 {
     [Tooltip("The max allowed amount of time between consecutive pops")]
     [SerializeField]
-    private float comboTime = 1.0f;
+    private float comboTime = 100.0f;
 
     private int m_popCount = 0;
     private float m_timeSinceLastPop = 0.0f;

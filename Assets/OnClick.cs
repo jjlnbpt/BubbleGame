@@ -52,7 +52,8 @@ public class OnClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && Vector3.Distance(worldPos, pos) <= radius)
         {
-            onPopSimple.Invoke();
+            AudioManager.instance.CreatePopInstance(m_bubbleManeger.GetCurrentCombo());
+
             onPop.Invoke(radius);
             m_bubbleManeger.IncrementPopCount();
             this.gameObject.SetActive(false);

@@ -562,7 +562,8 @@ MonoBehaviour:
   - Master
   Banks:
   - BackgroundMusic
-  - Bank A
+  - PopEvent
+  - SpawnEvent
   - SplashEvent
   BanksToLoad: []
   LiveUpdatePort: 9264

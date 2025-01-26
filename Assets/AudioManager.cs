@@ -85,10 +85,16 @@ public class AudioManager : MonoBehaviour
     }
 
     // Creates an instance of a bubble popping event
-    public EventInstance CreatePopInstance()
+    public EventInstance CreatePopInstance(int combo)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(popEvent);
         events.Add(eventInstance);
+
+        int pitch = Mathf.Min(combo, 15);
+        eventInstance.setParameterByName("PopPitch", pitch);
+        Debug.Log(combo);
+        eventInstance.start();
+
         return eventInstance;
     }
 
