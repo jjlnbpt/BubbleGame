@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class MoveUp : MonoBehaviour
 {
+    public float speed = 1.0f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        this.transform.position = new Vector3(transform.position.x, transform.position.y + 0.01f, 0.0f);
+        this.transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.fixedDeltaTime, 0.0f);
     }
 }

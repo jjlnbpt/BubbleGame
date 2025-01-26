@@ -54,9 +54,9 @@ public class OnClick : MonoBehaviour
         {
             AudioManager.instance.CreatePopInstance(m_bubbleManeger.GetCurrentCombo());
 
+            onPopSimple.Invoke();
             onPop.Invoke(radius);
             m_bubbleManeger.IncrementPopCount();
-            this.gameObject.SetActive(false);
 
         }
     }
